@@ -1,0 +1,32 @@
+<button onclick = "@getData;">Click</button>
+
+<% if @results %>
+    <h4><%= @results[0]['headword'] %></h4>
+    <% @results.to_enum.with_index(0) do |result, index| %>
+        <% if result['senses'] %>
+            <% if result['senses'][0] %>
+                <% if result['senses'][0]['definition'] %>
+                    <% if result['part_of_speech'] != @results[index - 1]['part_of_speech'] %>
+                        <h5><%= result['part_of_speech'] %></h5>
+                        <b>Definition:</b><br>
+                        <b>
+                        <% if result['senses'][0]['definition'].instance_of? String %>
+                        <%= result['senses'][0]['definition'] %>
+                        <% elsif result['senses'][0]['definition'].instance_of? Array %>
+                        <%= result['senses'][0]['definition'].join(" ") %>
+                        <% end %>
+                        </b>
+                    <% else %>
+                        <p>
+                            <% if result['senses'][0]['definition'].instance_of? String %>
+                            <%= result['senses'][0]['definition'] %>
+                            <% elsif result['senses'][0]['definition'].instance_of? Array %>
+                            <%= result['senses'][0]['definition'].join(" ") %>
+                            <% end %>
+                        </p>
+                    <% end %>
+                <% end %>
+            <% end %>
+        <% end %>
+    <% end %>
+<% end %>
