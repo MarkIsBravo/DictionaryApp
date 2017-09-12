@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         if user
             sign_in(user)
             flash[:notice] = 'Logged in successfully'
-            redirect_to users_path
+            redirect_to user_path(user)
         else
             flash[:error] = 'Username or password incorrect'
             @user = User.new(username: username)

@@ -17,7 +17,7 @@ class UsersController < ApplicationController
         if user.save
             sign_in(user)
             flash[:notice] = 'Logged in successfully'
-            redirect_to users_path
+            redirect_to user_path(user)
         else
             errors = user.errors.full_messages
             flash[:error] = errors.join(', ')
