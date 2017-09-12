@@ -21,5 +21,11 @@ class ApplicationController < ActionController::Base
     return nil if token.nil?
     User.find_by(session_token: token)
   end
-  
+
+  def ensure_logged_in
+    return if current_user
+    flas[:error] = 'Please log in.'
+    redirect_to new_session_path
+  end
+
 end
