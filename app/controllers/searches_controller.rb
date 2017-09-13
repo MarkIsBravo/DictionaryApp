@@ -1,9 +1,16 @@
 class SearchesController < ApplicationController
     def index
-
+        if params[:id]
+            get_data(params[:id])
+        else
+            return
+        end
+            
     end
     def show
+        @params = params[:id]
         get_data(params[:id])
+        puts "this is #{@params}"
     end
 
     def get_data (value)
