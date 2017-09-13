@@ -21,6 +21,10 @@ class WordsController < ApplicationController
     end 
 
     def destroy
+        @word.destroy!
+
+        flash[:notice] = "#{@word.spell} deleted!"
+        redirect_to words_path
     end
 
     private

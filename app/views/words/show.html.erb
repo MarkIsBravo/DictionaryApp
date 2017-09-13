@@ -1,4 +1,6 @@
 <h4><%= @word.spell %></h4>
-<p><b><%= "<#{@word.part_of_speech}>" %></b><br>
+<b><%= "<#{@word.part_of_speech}>" %></b><br>
+<p>
     <%= @word.definition %>
 </p>
+<%= button_to 'Delete Word', word_path(@word), method: :delete %>
