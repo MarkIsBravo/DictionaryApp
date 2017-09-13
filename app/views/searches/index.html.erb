@@ -1,5 +1,2 @@
-<%= form_tag(search_path(:id), method: "get") do %>
-    <%= label_tag(:id, "Search for:") %>
-    <%= text_field_tag :id, params[:id] %>
-    <%= submit_tag("Search") %>
-<% end %>
+<input class = 'search-input' type = 'text' />
+<button class = 'search-button'>Search</button>

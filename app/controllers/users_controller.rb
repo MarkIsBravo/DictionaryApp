@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-    before_action :ensure_logged_out, only: [:new, :create]
-    before_action :ensure_logged_in, only: [:show, :index]
+    before_action :ensure_logged_out, only: [:index, :new, :create]
+    before_action :ensure_logged_in, only: [:show]
     def index
         @user_count = User.count
     end
