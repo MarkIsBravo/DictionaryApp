@@ -1,3 +1,8 @@
 <h2>Your Personal Learning Studio</h2>
 <b>Welcome, <%= @user.username %>.</b>
-<%= link_to 'Search Words', searches_path %>
+<div>
+    <%= link_to 'Search Words', searches_path %>
+</div>
+<div>
+    <%= link_to 'See My Words', words_path %>
+</div>
