@@ -1,0 +1,4 @@
+<h2>Word List</h2>
+<% @words.each do |word| %>
+    <div><b><%=link_to word.spell, word_path(word) %></b></div>
+<% end %>
