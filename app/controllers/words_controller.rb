@@ -18,6 +18,13 @@ class WordsController < ApplicationController
     end
 
     def update
+        if @word.update(update_params)
+            flash[:notice] = 'Updated successfully.'
+            redirect_to words_path
+        else
+            flash[:error] = @word.errors.full_messages.join(', ')
+            render :edit
+        end
     end 
 
     def destroy
@@ -28,6 +35,10 @@ class WordsController < ApplicationController
     end
 
     private
+
+    def update_params
+        params.require(:word).permit(:definition)
+    end
 
     def load_words
         @word = current_user.words.find(params[:id])
