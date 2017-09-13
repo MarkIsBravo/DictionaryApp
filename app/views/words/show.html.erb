@@ -5,4 +5,4 @@
 </p>
 <%= button_to 'Delete Word', word_path(@word), method: :delete %>
 <br>
-<%= link_to 'Edit Word', edit_word_path(@word) %>
+<%= button_to 'Customize It', edit_word_path(@word), method: :get %>

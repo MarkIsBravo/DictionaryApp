@@ -20,7 +20,7 @@ class WordsController < ApplicationController
     def update
         if @word.update(update_params)
             flash[:notice] = 'Updated successfully.'
-            redirect_to words_path
+            redirect_to word_path(@word)
         else
             flash[:error] = @word.errors.full_messages.join(', ')
             render :edit
