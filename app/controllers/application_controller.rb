@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def sign_out
+    return unless current_user
     current_user.update_attribute(:session_token, nil)
     session.delete(:token)
   end
@@ -24,8 +25,14 @@ class ApplicationController < ActionController::Base
 
   def ensure_logged_in
     return if current_user
-    flas[:error] = 'Please log in.'
+    flash[:error] = 'Please log in.'
     redirect_to new_session_path
+  end
+
+  def ensure_logged_out
+    return unless current_user
+    flash[:error] = 'you are signed in so you cant see that'
+    redirect_to users_path
   end
 
 end
