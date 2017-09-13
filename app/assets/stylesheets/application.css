@@ -72,6 +72,7 @@ body{
     overflow: scroll;
 }
 input[type|="submit"]{
+    -webkit-appearance:none;
     border: 2px solid grey;
     box-sizing: border-box;
     margin: 5px 0;
