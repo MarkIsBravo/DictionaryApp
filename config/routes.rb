@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
 
-  resources :words, only: [:new, :create, :index, :show, :destroy]
+  resources :words
 
   resources :searches, only: [:index, :show]
 end
