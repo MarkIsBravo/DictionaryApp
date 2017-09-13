@@ -15,7 +15,7 @@
  */
 body{
     font-family: helvetica;
-    background-image: url('/assets/learn.jpg');
+    background-image: url('learn.jpg');
     background-size: cover;
     background-position: center;
     color: white;
