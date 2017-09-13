@@ -15,7 +15,7 @@
  */
 body{
     font-family: helvetica;
-    background-image: image-url('learn.jpg');
+    background-image: url('http://itjapanese.com/images/learn.jpg');
     background-size: cover;
     background-position: center;
     color: white;
