@@ -1,2 +1,16 @@
-<input class = 'search-input' type = 'text' />
+<input class = 'search-input' type = 'text' value = '' onkeyup = 'setInput(this.value)' />
 <button class = 'search-button'>Search</button>
+
+<script>
+    console.log('search engine working...')
+    var inputBox = document.getElementsByClassName('search-input');
+    var inputValue;
+    var searchBtn = document.querySelector('.search-button');
+    var setInput = function(e){
+        inputValue = e;
+    };
+    searchBtn.addEventListener('click', function(){
+        window.location = `http://localhost:3000/searches/${inputValue}`
+    });
+    
+</script>
