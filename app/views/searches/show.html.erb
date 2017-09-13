@@ -1,3 +1,6 @@
+<div>
+<%= button_to 'Back', searches_path, method: 'get' %>
+</div>
 <% if @results[0] %>
     <h4><%= @results[0]['headword'] %></h4>
     <% @results.to_enum.with_index(0) do |result, index| %>
