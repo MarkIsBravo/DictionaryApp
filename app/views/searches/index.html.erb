@@ -1,5 +1,18 @@
-<input class = 'search-input' type = 'text' value = '' onkeyup = 'setInput(this.value)' />
-<button class = 'search-button'>Search</button>
+<div class = 'button-single'>
+    <% if current_user %>
+        <%= button_to "Back to My Studio", user_path(current_user.id), method: "get", class: "back-button" %>
+    <% else %>
+        <%= button_to "Back to Home Page", users_path, method: "get", class: "back-button" %>
+    <% end %>
+</div>
+<h2>Dictionary</h2>
+<div class = 'search-banner'>
+    <p>This is the dictionary powered by <b><i>Pearson Dictionary</i></b>. Type in the word and search for the meaning!</p>
+</div>
+<div class = 'search-engine'>
+    <input class = 'search-input' type = 'text' value = '' onkeyup = 'setInput(this.value)' />
+    <button class = 'search-button'>Search</button>
+</div>
 
 <script>
     console.log('search engine working...')

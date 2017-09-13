@@ -1,3 +1,5 @@
-<h2>Welcome to Dictionary</h2>
-<b>There are <%= @user_count %> amazing learners using this app.</b>
-<%= link_to 'Search Words', searches_path %>
+<h2>Language Studio</h2>
+<div class = "welcome-banner">
+    <p>Click "Dictionary" to search.<br> <br><b>Register/Log in to make langauge learning not boring anymore!</b></p>
+</div>
+<%= button_to 'Dictionary', searches_path, method: "get", class: "big-button" %>

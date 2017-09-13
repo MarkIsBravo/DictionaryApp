@@ -1,3 +1,7 @@
+<div class = "button-single">
+    <%= button_to "Back to My Studio", user_path(current_user.id), method: "get", class: "back-button" %>
+</div>
+
 <h2>Create A New Word</h2>
 
 <%= form_for @word do |f| %>

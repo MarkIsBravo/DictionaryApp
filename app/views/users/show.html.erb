@@ -1,8 +1,6 @@
-<h2>Your Personal Learning Studio</h2>
+<h2>Your Own Learning Space</h2>
 <b>Welcome, <%= @user.username %>.</b>
-<div>
-    <%= link_to 'Search Words', searches_path %>
-</div>
-<div>
-    <%= link_to 'See My Words', words_path %>
+<div class = 'home-button' >
+    <%= button_to 'Dictionary', searches_path, method: "get" %>
+    <%= button_to 'See My Words', words_path, method: "get" %>
 </div>

@@ -1,35 +1,45 @@
-<div>
-<%= button_to 'Back to Search', searches_path, method: 'get' %>
+<div class = "button-single">
+    <%= button_to 'Back to Search', searches_path, method: 'get', class: "back-button" %>
 </div>
-<% if @results[0] %>
-    <h4><%= @results[0]['headword'] %></h4>
-    <% @results.to_enum.with_index(0) do |result, index| %>
-        <% if result['senses'] %>
-            <% if result['senses'][0] %>
-                <% if result['senses'][0]['definition'] %>
-                    <% if result['part_of_speech'] != @results[index - 1]['part_of_speech'] %>
-                        <h5><%= "<#{result['part_of_speech']}>" %></h5>
-                        <b>Definition:</b><br>
-                        <b>
-                            <% if result['senses'][0]['definition'].instance_of? String %>
-                                <%= "- #{result['senses'][0]['definition']}" %>
-                            <% elsif result['senses'][0]['definition'].instance_of? Array %>
-                                <%= "- #{result['senses'][0]['definition'].join(" ")}" %>
-                            <% end %>
-                        </b>
-                    <% else %>
-                        <p>
-                            <% if result['senses'][0]['definition'].instance_of? String %>
-                                <%= "- #{result['senses'][0]['definition']}" %>
-                            <% elsif result['senses'][0]['definition'].instance_of? Array %>
-                                <%= "- #{result['senses'][0]['definition'].join(" ")}" %>
-                            <% end %>
-                        </p>
+<div class = "search-results">
+    <% if @results[0] %>
+        <div class = "word-spell">
+            <h4><%= @results[0]['headword'] %></h4>
+        </div>
+        <% @results.to_enum.with_index(0) do |result, index| %>
+            <% if result['senses'] %>
+                <% if result['senses'][0] %>
+                    <% if result['senses'][0]['definition'] %>
+                        <% if result['part_of_speech'] != @results[index - 1]['part_of_speech'] %>
+                            <div class = "word-head">
+                                <h5><%= "<#{result['part_of_speech']}>" %></h5>
+                                <b>Definition:</b>
+                            </div>
+                            <div class = "word-detail">
+                                <p>
+                                    <% if result['senses'][0]['definition'].instance_of? String %>
+                                        <%= "- #{result['senses'][0]['definition']}" %>
+                                    <% elsif result['senses'][0]['definition'].instance_of? Array %>
+                                        <%= "- #{result['senses'][0]['definition'].join(" ")}" %>
+                                    <% end %>
+                                </p>
+                            </div>
+                        <% else %>
+                            <div class = "word-detail">
+                                <p>
+                                    <% if result['senses'][0]['definition'].instance_of? String %>
+                                        <%= "- #{result['senses'][0]['definition']}" %>
+                                    <% elsif result['senses'][0]['definition'].instance_of? Array %>
+                                        <%= "- #{result['senses'][0]['definition'].join(" ")}" %>
+                                    <% end %>
+                                </p>
+                            </div>
+                        <% end %>
                     <% end %>
                 <% end %>
             <% end %>
         <% end %>
+    <% else %>
+        <h4>Result not found...</h4>
     <% end %>
-<% else %>
-    <h4>Result not found...</h4>
-<% end %>
+</div>

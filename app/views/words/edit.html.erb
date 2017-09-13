@@ -1,15 +1,14 @@
-<h2>Update This Word</h2>
+<div class = "button-single">
+    <%= button_to "Back to My Studio", user_path(current_user.id), method: "get", class: "back-button" %>
+</div>
+<h2>Customize This Word</h2>
 
 <%= form_for @word do |f| %>
-    <%= label_tag :spell %>
-
-    <b><%= @word.spell %></b>
-    <br>
-    <p><%= @word.part_of_speech %></p>
-    <br>
-    <%= label_tag :definition %>
-    <br>
+    <div class = "customize-banner">
+        <b><%= @word.spell %></b>
+        <p><%= "<#{@word.part_of_speech}>" %></p>
+    </div>
+    <%= label_tag "definition:" %>
     <%= f.text_area :definition, placeholder: 'Definition' %>
-    <br>
     <%= submit_tag 'Update' %>
 <% end %>

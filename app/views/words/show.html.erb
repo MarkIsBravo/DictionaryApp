@@ -1,8 +1,15 @@
+<div class = "button-single">
+    <%= button_to "Back to My Studio", user_path(current_user.id), method: "get", class: "back-button" %>
+</div>
+
 <h4><%= @word.spell %></h4>
 <b><%= "<#{@word.part_of_speech}>" %></b><br>
 <p>
     <%= @word.definition %>
 </p>
-<%= button_to 'Delete Word', word_path(@word), method: :delete %>
-<br>
-<%= button_to 'Customize It', edit_word_path(@word), method: :get %>
+<div class = 'button-single'>
+    <%= button_to 'Delete Word', word_path(@word), method: :delete %>
+</div>
+<div class = 'button-single'>
+    <%= button_to 'Customize It', edit_word_path(@word), method: :get %>
+</div>

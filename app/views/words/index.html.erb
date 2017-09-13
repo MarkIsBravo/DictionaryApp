@@ -1,4 +1,16 @@
+<div class = "button-single">
+    <%= button_to "Back to My Studio", user_path(current_user.id), method: "get", class: "back-button" %>
+</div>
+
 <h2>Word List</h2>
-<% @words.each do |word| %>
-    <div><b><%=link_to word.spell, word_path(word) %></b></div>
-<% end %>
+
+<div class = 'wordlist-banner'>
+    <b>Want to add the word to your list? Insert it now!</b>
+    <%= button_to 'Insert New Word', new_word_path, method: "get" %>
+</div>
+
+<div class = "word-list">
+    <% @words.each do |word| %>
+        <%=button_to word.spell, word_path(word), method: "get" %>
+    <% end %>
+</div>

@@ -17,13 +17,21 @@
       <%= flash[:error] %>
     </div>
 
-    <% if current_user %>
-      <%= link_to 'Log out', session_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Log in', new_session_path %>
-      <%= link_to 'Register', new_user_path %>
-    <% end %>
-
-    <%= yield %>
+    <div class = 'container'>
+      <div class = 'button-list'>
+        <% if current_user %>
+          <%= button_to 'Log out', session_path, method: :delete %>
+        <% else %>
+          <%= button_to 'Log in', new_session_path, method: "get" %>
+          <%= button_to 'Register', new_user_path, method: "get" %>
+        <% end %>
+      </div>
+      <div class = 'app-box'>
+        <%= yield %>
+      </div>
+    </div>
+    <footer>
+      Site by Mark Zheng Ma. Dictionary powered by <b><i>Pearson Dictionary</i></b>.
+    </footer>
   </body>
 </html>
