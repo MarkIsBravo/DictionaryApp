@@ -1,0 +1,11 @@
+<h2>Create A New Word</h2>
+
+<%= form_for @word do |f| %>
+    <%= f.text_field :spell, placeholder: 'Name' %>
+    <br>
+    <%= f.text_field :part_of_speech, placeholder: 'Part of Speech' %>
+    <br>
+    <%= f.text_area :definition, placeholder: 'Definition' %>
+    <br>
+    <%= submit_tag 'Create This Word' %>
+<% end %>
