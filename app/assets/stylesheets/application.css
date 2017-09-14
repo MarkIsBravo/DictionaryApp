@@ -77,13 +77,13 @@ input[type|="submit"]{
     box-sizing: border-box;
     margin: 5px 0;
     cursor: pointer;
-    background: #77EEDF;
+    background: #C39D63;
     color: black;
     font-weight: 800;
 }
 input[type|="submit"]:hover{
     background: #00FDDB;
-    background: -webkit-radial-gradient(#FFFFFF, #77EEDF);
+    background: -webkit-radial-gradient(#FFFFFF, #C39D63);
     /* border: 4px solid grey; */
     /* color: #575C5A;     */
 }
@@ -94,7 +94,7 @@ input[type|="submit"]:hover{
     border-bottom: 2px solid grey;
     margin: 5px;
     /* background: rgba(255,255,255,1);
-    background: -webkit-radial-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0)); */
+    background: -webkit-radial-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0)); */
 }
 .big-button{
     height: 50px;
@@ -110,10 +110,10 @@ input[type|="submit"]:hover{
     margin: 5px;
 }
 #new_user input[type|="text"]:hover{
-    background: #77EEDF;
+    background: #C39D63;
 }
 #new_user input[type|="password"]:hover{
-    background: #77EEDF;
+    background: #C39D63;
 }
 #new_user input[name|="commit"]{
     height: 30px;
@@ -141,6 +141,10 @@ input[type|="submit"]:hover{
     margin: 5px 0 10px 0;
     border-top: 2px solid grey;
     border-bottom: 2px solid grey;
+}
+.wordlist-banner input[value|="Insert New Word"]{
+    height: 30px;
+    width: 210px;
 }
 .word-list{
     width: 60vw;
@@ -189,13 +193,13 @@ input[type|="submit"]:hover{
     height: 60px;
 }
 .new_word input[type|="text"]:hover{
-    background: #77EEDF;
+    background: #C39D63;
 }
 .new_word input[type|="password"]:hover{
-    background: #77EEDF;
+    background: #C39D63;
 }
 .new_word #word_definition:hover{
-    background: #77EEDF;
+    background: #C39D63;
 }
 .new_word input[name|="commit"]{
     height: 30px;
@@ -221,7 +225,7 @@ input[type|="submit"]:hover{
     height: 60px;
 }
 .edit_word #word_definition:hover{
-    background: #77EEDF;
+    background: #C39D63;
 }
 .edit_word input[name|="commit"]{
     height: 30px;
@@ -240,7 +244,7 @@ input[type|="submit"]:hover{
     margin: 5px;
 }
 .search-engine input:hover{
-    background: #77EEDF;
+    background: #C39D63;
 }
 .search-engine button{
     height: 30px;
@@ -248,35 +252,42 @@ input[type|="submit"]:hover{
     border: 2px solid grey;
     box-sizing: border-box;
     cursor: pointer;
-    background: #77EEDF;
+    background: #C39D63;
     color: black;
     font-weight: 800;
 }
 .search-engine button:hover{
     background: #00FDDB;
-    background: -webkit-radial-gradient(#FFFFFF, #77EEDF);
+    background: -webkit-radial-gradient(#FFFFFF, #C39D63);
 }
 .search-results{
     width: 70vw;
+    margin-top: 10px;
 }
 .word-spell{
     color: black;
     padding: 0 0 0 5px;
     border-top: 2px solid #C6D7C7;
     border-bottom: 2px solid #C6D7C7;
-    background: #FFEFE5;
     background: -webkit-linear-gradient(left, #FFEFE5, rgba(0, 0, 0, 0));
+    background: linear-gradient(to right, #FFEFE5, rgba(0, 0, 0, 0));
 }
 .word-head h5{
     margin: 5px 0;
 }
 .word-detail{
-    color: black;
+    color: #022379;
     padding: 0 0 0 5px;
     margin: 10px 0;
     border-left: 2px solid #C6D7C7;
     background: #FFEFE5;
-    background: -webkit-linear-gradient(left, #FFEFE5, rgba(0, 0, 0, 0) 30vw);
+    background: -webkit-linear-gradient(left, #C39D63, rgba(0, 0, 0, 0));
+}
+.word-detail p{
+    /* background: -webkit-linear-gradient(left, #000000, #FFFFFF);
+    background: linear-gradient(to right,  #000000, #FFFFFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
 }
 footer{
     background: rgba(0,0,0,0.3);
