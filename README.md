@@ -1,3 +1,3 @@
-# DictionaryApp
+# Language Studio
 
-This is a Ruby on Rails Dictionary App. With the search new word partially functioning and CRUD working. I'll keep working on it...
+This is a Ruby on Rails educational app designed for English language learners. Users could look up definition of words using the dictionary. Also, after register and log in, users could build their own word list with editing and deleting functions as well.
